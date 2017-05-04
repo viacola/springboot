@@ -21,8 +21,6 @@ class User {
 
     String mobile;
     // The user name
-
-    @Column(name = "username")
     String username
 
     int gender

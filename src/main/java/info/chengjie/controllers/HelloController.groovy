@@ -2,6 +2,7 @@ package info.chengjie.controllers;
 
 import groovy.json.JsonBuilder
 import groovy.json.JsonOutput
+import info.chengjie.model.User
 import info.chengjie.services.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
@@ -41,7 +42,11 @@ class HelloController {
     @GetMapping("/hello2")
     String hello2() {
         def user = userRepository.findByMobile("17705176726")
+        println("username:" +user.getUsername())
 
-        JsonOutput.toJson(user)
+        def user2 = new User(username: "陈兵", id: 1, mobile: 18888888 )
+
+        JsonOutput.toJson(user2)
+
     }
 }

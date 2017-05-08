@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by macos on 2017/5/2.
@@ -58,10 +59,10 @@ public class UserController {
     @GetMapping("/user/findUserInfo")
     public String findUserInfoByMobile(String mobile) {
             String userInfo = userRepository.findUserNameAndMobileAndAvatar(mobile);
-            User user = userRepository.findUserInfo(mobile);
+            Object[] user = userRepository.findUserInfo(mobile);
 //        System.out.println("userInfo:" + userInfo.length);
         System.out.println(userInfo);
-        System.out.println("q   qq  userName  333:" + user.getUsername() );
+        System.out.println("q   qq  userName  333:" + user.toString() );
 //        return "@ " + userInfo[0] + " | " + userInfo[1] + " | " + userInfo[2];
         System.out.println("---2222--");
 

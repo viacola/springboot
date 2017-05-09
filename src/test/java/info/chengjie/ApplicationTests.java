@@ -16,7 +16,7 @@
 
 package info.chengjie;
 
-import info.chengjie.services.PersonRepository;
+import info.chengjie.repository.PersonRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

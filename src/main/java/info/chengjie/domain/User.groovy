@@ -1,9 +1,7 @@
-package info.chengjie.model;
+package info.chengjie.domain;
 
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
+import javax.persistence.*
 
 @Entity
 @Table(name = "user")

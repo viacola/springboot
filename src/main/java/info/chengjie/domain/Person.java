@@ -1,4 +1,4 @@
-package info.chengjie.model;
+package info.chengjie.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

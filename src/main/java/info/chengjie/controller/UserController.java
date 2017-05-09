@@ -1,7 +1,7 @@
-package info.chengjie.controllers;
+package info.chengjie.controller;
 
-import info.chengjie.model.User;
-import info.chengjie.services.UserRepository;
+import info.chengjie.domain.User;
+import info.chengjie.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +10,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by macos on 2017/5/2.

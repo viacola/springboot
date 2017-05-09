@@ -1,6 +1,6 @@
-package info.chengjie.controllers
+package info.chengjie.controller
 
-import info.chengjie.services.UserRepository
+import info.chengjie.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable

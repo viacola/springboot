@@ -62,4 +62,10 @@ class UserGroovyController {
     String jdbcTest(){
             JsonOutput.toJson jdbcTemplate.queryForMap("Select count(*) as count from user")
     }
+
+    @GetMapping(value="/findUserCount", produces = "application/json")
+    String findUserCount(){
+        JsonOutput.toJson jdbcTemplate.queryForMap("Select count(*) as count from user")
+    }
+
 }

@@ -1,13 +1,12 @@
-package info.chengjie.controllers;
+package info.chengjie.controller;
 
 import groovy.json.JsonBuilder
 import groovy.json.JsonOutput
-import groovy.transform.CompileStatic
-import info.chengjie.model.User
-import info.chengjie.services.UserRepository
+import info.chengjie.repository.JdbcRepository
+import info.chengjie.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.RestController
 
 
@@ -16,6 +15,13 @@ class UserGroovyController {
 
     @Autowired
     UserRepository userRepository
+
+    @Autowired
+    JdbcRepository jdbcGroovyRepository
+
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     @GetMapping(value = "/hello1", produces = "application/json")
     String hello1() {
@@ -50,5 +56,10 @@ class UserGroovyController {
 
         JsonOutput.toJson(userMap)
 
+    }
+
+    @GetMapping(value="/test-jdbc", produces = "application/json")
+    String jdbcTest(){
+            JsonOutput.toJson jdbcTemplate.queryForMap("Select count(*) as count from user")
     }
 }

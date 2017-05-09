@@ -63,9 +63,9 @@ class UserGroovyController {
             JsonOutput.toJson jdbcTemplate.queryForMap("Select count(*) as count from user")
     }
 
-    @GetMapping(value="/findUserCount", produces = "application/json")
-    String findUserCount(){
-        JsonOutput.toJson jdbcTemplate.queryForMap("Select count(*) as count from user")
+    @GetMapping(value="/findUserInfoLimit3", produces = "application/json")
+    String findUserInfoLimit3(){
+        JsonOutput.toJson jdbcTemplate.queryForList("Select *  from user limit 3")
     }
 
 }
